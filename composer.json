@@ -1,0 +1,32 @@
+{
+    "name": "lizmap/lizmap-service-module",
+    "type": "jelix-module",
+    "description": "Jelix module to manage direct WFS to a dedicated Lizmap project",
+    "keywords": ["module", "jelix", "lizmap", "service", "wfs"],
+    "homepage": "http://3liz.com",
+    "license": "MPL-2.0",
+    "authors": [
+        {
+            "name": "Michaël Douchin",
+            "email": "mdouchin@3liz.com"
+        }
+    ],
+    "require": {
+    },
+    "minimum-stability": "stable",
+    "extra" : {
+        "jelix" : {
+            "modules": [
+                "service/"
+            ],
+            "autoconfig-access-16" : {
+                "lizmap@3liz.com" : {
+                    "service": {
+                        "__global": 1,
+                        "index" : 2
+                    }
+                }
+            }
+        }
+    }
+}
