@@ -17,7 +17,7 @@ checkAppOpened();
 // mapping of url to basic url (/module/controller/method)
 $mapping = array(
 
-    '/service/wfs/:repository/:project/' => '/lizmap/service/index',
+    '/:repository/:project/' => '/service/default/index',
 );
 
 jApp::loadConfig('service/config.ini.php');
