@@ -6,3 +6,5 @@
 
 # Node, NPM
 node_modules
+
+*.code-workspace

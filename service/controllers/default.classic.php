@@ -12,7 +12,7 @@ include jApp::getModulePath('lizmap').'controllers/service.classic.php';
 
 class defaultCtrl extends serviceCtrl {
     /**
-    *
+    * Return parent
     */
     function index() {
         return parent::index();

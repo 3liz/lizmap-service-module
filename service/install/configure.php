@@ -21,7 +21,6 @@ class serviceModuleConfigurator extends \Jelix\Installer\Module\Configurator {
         return array();
     }
 
-
     public function declareUrls(EntryPointUrlModifier $registerOnEntryPoint)
     {
         $registerOnEntryPoint->havingName(
@@ -44,7 +43,6 @@ class serviceModuleConfigurator extends \Jelix\Installer\Module\Configurator {
             )
         );
     }
-
 
     function configure(\Jelix\Installer\Module\API\ConfigurationHelpers $helpers)
     {
