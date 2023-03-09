@@ -11,7 +11,7 @@
         <homepageURL>http://3liz.com</homepageURL>
     </info>
     <dependencies>
-        <module name="lizmap" minversion="3.4.*" maxversion="3.6.*"/>
+        <module name="lizmap" minversion="3.5.*" maxversion="3.7.*"/>
     </dependencies>
     <autoload>
         <namespacePathMap name="Service" dir="lib"/>

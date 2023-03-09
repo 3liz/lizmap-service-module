@@ -2,39 +2,81 @@
 
 ## Introduction
 
-This is a Lizmap module to generate significant URLS for Lizmap services.
+**Service** est un module pour [Lizmap](https://www.lizmap.com/) qui peut être utilisé pour mettre à disposition les services Lizmap via certaines URLS.
 
-For example, it can redirect to the URL:
-`https://liz.map/index.php/lizmap/service/?repository=montpellier&project=montpellier&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetCapabilities`
-by calling:
-`https://liz.map/service.php/montpellier/montpellier/?SERVICE=WFS&VERSION=1.0.0&REQUEST=GetCapabilities`
+Par exemple, on peut appeler directement cette URL :
 
-## Module installation
+`https://liz.map/service.php/test/montpellier/?SERVICE=WFS&VERSION=1.0.0&REQUEST=GetCapabilities`
 
-NB: all the path given are relative to your Lizmap Web Client instance folder.
+pour rejoindre
 
-* Copy the `service` directory inside the `lizmap/lizmap-modules/` of a working Lizmap Web Client instance to have a new `lizmap/lizmap-modules/service/` folder containing the files `module.xml`, `events.xml`, and folders.
+`https://liz.map/index.php/lizmap/service/?repository=test&project=montpellier&SERVICE=WFS&VERSION=1.0.0&REQUEST=GetCapabilities`
 
-* Then modify the file `lizmap/var/config/localconfig.ini.php` to add `service.access=2` in the `[modules]` section, such as
+On voit que le répertoire Lizmap `test` et le projet `montpellier` ne sont passés dans les paramètres
+mais sont passés avant le `?`
+
+
+## Installation
+
+Il est recommandé d'installer le module avec [Composer](https://getcomposer.org),
+le gestionnaire de paquet pour PHP.
+Si vous ne pouvez pas l'utiliser, utilisez la méthode manuelle indiquée plus bas.
+
+NB : tous les chemins ci-dessous sont relatifs au dossier de Lizmap Web Client.
+
+### Installation automatique avec Composer
+
+* Dans `lizmap/my-packages`, créer le fichier `composer.json` si il n'existe pas déjà,
+  en copiant le fichier `composer.json.dist`, puis installer le module avec Composer :
+
+```bash
+cp -n lizmap/my-packages/composer.json.dist lizmap/my-packages/composer.json
+composer require --working-dir=lizmap/my-packages "lizmap/lizmap-service-module"
+```
+
+* puis aller dans le répertoire `lizmap/install/` pour lancer l'installateur
+
+Si vous utilisez Lizmap 3.6 et suivante, lancez d'abord la commande :
+
+```bash
+php configurator.php service
+```
+
+* Lancez enfin l'installation du module :
+
+```bash
+php installer.php
+./clean_vartmp.sh
+./set_rights.sh
+```
+
+Go to the "Configuration" section.
+
+### Installation manuelle, sans Composer
+
+* Téléchargez l'archive sur la [page des version dans Github](https://github.com/3liz/lizmap-service-module/releases).
+* Extrayez les fichiers de l'archive et copier le répertoire `service` dans `lizmap/lizmap-modules/`.
+
+
+* Si vous utilisez Lizmap 3.5, éditez le fichier `lizmap/var/config/localconfig.ini.php` pour ajouter
+  dans la section `[modules]`
 
 ```ini
-[modules]
 service.access=2
-
 ```
 
-* Copy the folder `service/install/service` inside the Lizmap folder `lizmap/var/config/` to have a new folder `lizmap/var/config/service` with a file `config.ini.php` inside
+* Si vous utilisez Lizmap 3.6, lancez la commande
 
 ```bash
-cp -R lizmap/lizmap-modules/service/install/service lizmap/var/config/service
+php lizmap/install/configurator.php service
 ```
 
-* Then you need to run the Lizmap installer
+* Pour toutes versions de Lizmap, lancez l'installateur :
 
 ```bash
-lizmap/install/set_rights.sh
-lizmap/install/clean_vartmp.sh
 php lizmap/install/installer.php
+./lizmap/install/clean_vartmp.sh
+./lizmap/install/set_rights.sh
 ```
 
 ## License

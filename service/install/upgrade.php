@@ -14,13 +14,9 @@ class serviceModuleUpgrader extends jInstallerModule
         // Copy entry point
         // Needed in the upgrade process
         // if the variable $mapping has changed
-        if (method_exists($this, 'createEntryPoint')) {
-            $this->createEntryPoint('service.php', 'service/config.ini.php', 'service', 'classic');
-        }
-        else {
-            //deprecated and not safe
-            $this->copyFile('service.php', jApp::wwwPath('service.php'));
-        }
+        $config = method_exists('jApp', 'appSystemPath') ?
+            'config/config.ini.php': 'config_1_6/config.ini.php';
 
+        $this->createEntryPoint('service.php', $config, 'service');
     }
 }

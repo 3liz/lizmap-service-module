@@ -7,17 +7,11 @@
 * @link      http://3liz.com
 * @license    Mozilla Public License 2
 */
-class serviceModuleInstaller extends jInstallerModule
+
+class serviceModuleInstaller extends  \Jelix\Installer\Module\Installer
 {
-    public function install()
+    public function install(Jelix\Installer\Module\API\InstallHelpers $helpers)
     {
-        if (method_exists($this, 'createEntryPoint')) {
-            $this->createEntryPoint('service.php', 'service/config.ini.php', 'service', 'classic');
-        }
-        else {
-            // Deprecated
-            // Copy configuration file
-            $this->copyFile('service.php', jApp::wwwPath('service.php'));
-        }
+
     }
 }
