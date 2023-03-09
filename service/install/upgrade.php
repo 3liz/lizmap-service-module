@@ -1,12 +1,12 @@
 <?php
 /**
- * @author    3liz
- * @copyright 2018-2020 3liz
- *
- * @see      http://3liz.com
- *
- * @license   GPL 3
- */
+* @package   lizmap
+* @subpackage service
+* @author    Michaël DOUCHIN
+* @copyright 2022 3liz
+* @link      http://3liz.com
+* @license    Mozilla Public License 2
+*/
 class serviceModuleUpgrader extends jInstallerModule
 {
     public function install()
@@ -14,7 +14,13 @@ class serviceModuleUpgrader extends jInstallerModule
         // Copy entry point
         // Needed in the upgrade process
         // if the variable $mapping has changed
-        $www_path = jApp::wwwPath('service.php');
-        $this->copyFile('service.php', $www_path);
+        if (method_exists($this, 'createEntryPoint')) {
+            $this->createEntryPoint('service.php', 'service/config.ini.php', 'service', 'classic');
+        }
+        else {
+            //deprecated and not safe
+            $this->copyFile('service.php', jApp::wwwPath('service.php'));
+        }
+
     }
 }

@@ -1,16 +1,14 @@
 <?php
 /**
- * Entry point for Service API.
- *
- * @author    3liz
- * @copyright 2018-2020 3liz
- *
- * @see      http://3liz.com
- *
- * @license   GPL 3
- */
-require '../application.init.php';
-require JELIX_LIB_CORE_PATH.'request/jClassicRequest.class.php';
+* @package   lizmap
+* @subpackage service
+* @author    Michaël DOUCHIN
+* @copyright 2022 3liz
+* @link      http://3liz.com
+* @license    Mozilla Public License 2
+*/
+require ('../application.init.php');
+require (JELIX_LIB_CORE_PATH.'request/jClassicRequest.class.php');
 
 checkAppOpened();
 
@@ -24,4 +22,3 @@ jApp::loadConfig('service/config.ini.php');
 
 jApp::setCoord(new jCoordinator());
 jApp::coord()->process(new \Service\Request($mapping));
-

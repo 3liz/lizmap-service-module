@@ -1,11 +1,11 @@
 <?php
 /**
 * @package   lizmap
-* @subpackage gestion
-* @author    your name
-* @copyright 2011 3liz
+* @subpackage service
+* @author    Michaël DOUCHIN
+* @copyright 2022 3liz
 * @link      http://3liz.com
-* @license    All rights reserved
+* @license    Mozilla Public License 2
 */
 
 include jApp::getModulePath('lizmap').'controllers/service.classic.php';
@@ -18,4 +18,3 @@ class defaultCtrl extends serviceCtrl {
         return parent::index();
     }
 }
-
