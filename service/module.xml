@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module xmlns="http://jelix.org/ns/module/1.0">
     <info id="service3liz.com" name="service" createdate="2016-12-05">
-        <version date="2023-03-09">0.2.1</version>
+        <version date="2024-10-15">0.2.2</version>
         <label lang="en_US">service</label>
         <description lang="en_US" />
         <license URL="http://www.mozilla.org/MPL/">Mozilla Public License</license>
         <copyright>2016 3liz</copyright>
         <creator name="3liz" email="info@3liz.com" active="true"/>
         <!--<contributor name="hisname" email="hisemail@yoursite.undefined" active="true" since="" role=""/>-->
-        <homepageURL>http://3liz.com</homepageURL>
+        <homepageURL>https://github.com/3liz/lizmap-service-module/</homepageURL>
     </info>
     <dependencies>
-        <module name="lizmap" minversion="3.5.*" maxversion="3.7.*"/>
+        <module name="lizmap" minversion="3.6.*" maxversion="3.8.*"/>
     </dependencies>
     <autoload>
         <namespacePathMap name="Service" dir="lib"/>
