@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 0.2.3 - 2025-12-08
+
+* Add compatibility with Lizmap Web Client 3.9
+
 ## 0.2.2 - 2024-10-15
 
 ### Changed
