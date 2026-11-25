@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Changed
+
+* Add compatibility with Lizmap Web Client 3.10
+* Lizmap Web Client 3.8 minimum is required
+
 ## 0.2.3 - 2025-12-08
 
 * Add compatibility with Lizmap Web Client 3.9

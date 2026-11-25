@@ -11,7 +11,7 @@
         <homepageURL>https://github.com/3liz/lizmap-service-module/</homepageURL>
     </info>
     <dependencies>
-        <module name="lizmap" minversion="3.6.*" maxversion="3.9.*"/>
+        <module name="lizmap" minversion="3.8.*" maxversion="3.10.*"/>
     </dependencies>
     <autoload>
         <namespacePathMap name="Service" dir="lib"/>
