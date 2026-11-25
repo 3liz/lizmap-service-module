@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module xmlns="http://jelix.org/ns/module/1.0">
     <info id="service3liz.com" name="service" createdate="2016-12-05">
-        <version date="2025-12-08">0.2.3</version>
+        <version date="2026-11-25">0.3.0</version>
         <label lang="en_US">service</label>
         <description lang="en_US" />
         <license URL="http://www.mozilla.org/MPL/">Mozilla Public License</license>
